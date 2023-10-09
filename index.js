@@ -20,10 +20,10 @@ app.get('/books/book/:id', async (req, res) => {
     const {id}=req.params
     const book=await storebook.findById(id)
     if (book) {
-      res.json(book);
+      res.send(book);
     }
     else {
-      res.status(404).json({ message: 'Book not found' });
+      res.status(404).send("book no found");
     }
   });
 //   delete
